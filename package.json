@@ -1,0 +1,39 @@
+{
+	"name": "ray",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.20.5",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/svelte": "^5.2.7",
+		"@types/mapbox-gl": "^3.4.1",
+		"esbuild": "0.25.2",
+		"jsdom": "^26.0.0",
+		"svelte": "^5.25.8",
+		"svelte-check": "^4.1.5",
+		"typescript": "^5.8.3",
+		"vite": "^6.2.6",
+		"vitest": "^3.1.1"
+	},
+	"packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971",
+	"dependencies": {
+		"@mercadopago/sdk-js": "^0.0.3",
+		"@types/imagesloaded": "^4.1.6",
+		"imagesloaded": "^5.0.0",
+		"mapbox-gl": "^3.11.0",
+		"three": "^0.175.0"
+	}
+}

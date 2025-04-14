@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ray</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#0E0E0E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="color-scheme" content="dark">
+
+    <script>
+      // Fix for mobile viewport height
+      function setAppHeight() {
+        const doc = document.documentElement;
+        doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+      }
+      window.addEventListener('resize', setAppHeight);
+      window.addEventListener('orientationchange', setAppHeight);
+      setAppHeight();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/pwacompat" async>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('SW registered: ', registration);
+          }, function(err) {
+            console.log('SW registration failed: ', err);
+          });
+        });
+      }
+    </script>
+
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>
